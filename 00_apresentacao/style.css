@@ -1,0 +1,36 @@
+body {
+    background-color: antiquewhite;
+}
+img {
+    width: 15%;  
+    text-align: left;
+    border-radius: 10px;
+}
+main {
+    background-color: white;
+    border-radius: 10px;
+    margin: 20%;
+    margin-top: 1%;
+    
+}
+footer {
+    display:inline-block;
+    vertical-align: top;
+    text-align: center;
+    border: 3px solid black;
+    border-radius: 5px;
+    margin: 1%;
+    width: 50%;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+header {
+    background-color:deepskyblue;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    max-width: 100%;
+    border-radius: 5px;
+}
+
+#a {
+    width: 25%
+}
