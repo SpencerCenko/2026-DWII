@@ -21,7 +21,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>- <?php echo $nome; ?></title>
     
-    <link rel="stylesheet" type="text/css" href="aa.css">
+    <link rel="stylesheet" type="text/css" href="phpcs.css">
 </head>
 <body>
     <?php include 'includes/cabecalho.php'; ?>

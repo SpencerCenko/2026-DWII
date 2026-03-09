@@ -1,4 +1,4 @@
-<!-- 01_php-intro/index.php -->
+<!-- 01_php-intro/cabecalho.php -->
  <!--
     Disciplina : Desenvolvimento Web II (DWII)
     Aula       : 03 - Arquitetura Web e Introdução ao PHP
