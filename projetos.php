@@ -7,14 +7,14 @@
     Repositório: https://github.com/SpencerCenko/2026-DWII
 -->
 <?php $nome = "Spencer Cenko";
-$pagina_atual ="projetos";
+$pagina_atual ="Projetos";
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title><?php echo $pagina_atual?> - <?php echo $nome; ?></title>
 </head>
 <link rel="stylesheet" type="text/css" href="phpcs.css">
 <body id="a">

@@ -8,7 +8,7 @@
 -->
 <?php
 
-$pagina_atual = "sobre";
+$pagina_atual = "Sobre";
 $nome = "Spencer Cenko";
 ?>
 <!DOCTYPE html>
@@ -16,7 +16,7 @@ $nome = "Spencer Cenko";
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sobre - <?php echo $nome; ?></title>
+    <title><?php echo $pagina_atual?> - <?php echo $nome; ?></title>
 </head>
 <link rel="stylesheet" type="text/css" href="phpcs.css">
 <body>

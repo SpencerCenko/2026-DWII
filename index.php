@@ -11,7 +11,7 @@
     $nome = "Spencer Cenko";
     $profissao = "Estudante de Tecnologia";
     $curso = "Técnico em informática - IFPR";
-    $pagina_atual = "inicio";
+    $pagina_atual = "Inicio";
 
     ?>
 <!DOCTYPE html>
@@ -19,7 +19,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>- <?php echo $nome; ?></title>
+    <title><?php echo $pagina_atual?> - <?php echo $nome; ?></title>
     
     <link rel="stylesheet" type="text/css" href="phpcs.css">
 </head>
