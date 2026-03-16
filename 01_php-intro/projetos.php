@@ -1,24 +1,31 @@
-<!-- 01_php-intro/projetos.php -->
- <!--
-    Disciplina : Desenvolvimento Web II (DWII)
-    Aula       : 03 - Arquitetura Web e Introdução ao PHP
-    Autor      : Spencer Antunes da Rosa Cenko
-    Data       : [08/03/2026]
-    Repositório: https://github.com/SpencerCenko/2026-DWII
--->
-<?php $nome = "Spencer Cenko";?>
+
+<?php 
+    /**
+ * 
+ * Arquivo: 01_php-intro/projetos.php
+ * Disciplina: Desenvolvimento Web II (2026-DWII)
+ * Aula: 04 -- PHP para Web: Formulários, GET e POST
+ * Autor: Spencer Cenko
+ * 
+ */
+$nome = "Spencer Cenko";
+$pagina_atual ="Projetos";
+$caminho_raiz = "../";
+$titulo_pagina = "Portfólio - ($nome)";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title><?php echo $pagina_atual?> - <?php echo $nome; ?></title>
+    <?php include '../includes/cabecalho.php'; ?>
 </head>
-<link rel="stylesheet" type="text/css" href="phpcs.css">
-<body id="a">
-    <?php include 'includes/cabecalho.php'; ?>
+
+<body>
      <div>
-    <h2>Projeto 1: lista de Leis</h2>
+        <h1 style="color: #3b579d;"> Projetos </h1>
+    <h2>Projeto 1: Lista de Leis</h2>
     <p>
         Anteriormente na matéria do Celso criei um site com leis cadastradas em banco de dados, que mostra as leis em html
     </p>
@@ -31,6 +38,6 @@
         Tenho planejado de criar um mod em neoforge com meus amigos para minecraft java
 </p>
 </div>
-    <?php include 'includes/rodape.php'; ?>
+    <?php include '../includes/rodape.php'; ?>
 </body>
 </html>
