@@ -24,6 +24,7 @@ $mensagem = $_POST['mensagem'] ?? '';
 $nome_visitante = '';
 $mensagem = '';
 $erros = [];
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $nome_visitante = trim($_POST['nome_visitante'] ?? '');
     $mensagem = trim($_POST['mensagem'] ?? '');

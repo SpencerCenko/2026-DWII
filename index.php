@@ -49,7 +49,7 @@ $aulas = [
     "link" => "02_formularios/contato.php",
     "icone" => "",
     "cor" => "#3ba34a",
-    "conceitos" => "$_POST, validação, htmlspecialchars(), header() + exit",
+    "conceitos" => "validação, htmlspecialchars(), header() + exit",
 ],
 ];
 ?>
