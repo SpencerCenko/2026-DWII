@@ -9,7 +9,17 @@
 
 $titulo_pagina = "Catálogo de Tecnologias";
 $pagina_atual = "Catalogo";
+$nome = '';
+$erros = [];
 
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $nome = trim($_POST['nome'] ?? '');
+    if (empty($nome)) {
+    $erros[] = 'O campo Nome é obrigatório.';
+}
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && empty($erros))
+    header('Location: buscar.php?nome=' . urlencode($nome)); 
+}
 require_once 'includes/conexao.php';
 
 $stmt = $pdo->query('SELECT * FROM tecnologias ORDER BY nome ASC');
@@ -29,8 +39,11 @@ $tecnologias = $stmt->fetchAll();
     <h1 class="titulo-secao"> Catálogo de Tecnologias</h1>
     <p style="color: #6b7280; margin-bottom: 20px">
         <?php echo count($tecnologias); ?> tecnologia(s) cadastrada(s)
-</p>
-
+<form class="form-container" action="index.php" method="post">
+    <input type="text" name="nome" placeholder="Insira o nome ou a descrição"> <!-- placeholder serve para colocar aquelas letras cinzas q aparecem qnd n tem nada no input-->
+    <button type="submit">Pesquisar</button>
+</form>
+<br>
 <!-- Loop pelos registros do banco -->
  <?php foreach ($tecnologias as $tec): ?>
     <div class="card">

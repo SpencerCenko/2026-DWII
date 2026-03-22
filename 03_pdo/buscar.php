@@ -6,18 +6,11 @@ $caminho_raiz = "../";
 require_once 'includes/conexao.php';
 
 // Validar o ID recebido via GET - retorna false qnd n for inteiro valido
-$id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
-if (!$id) {
-    // ID invalido ou ausente - redirecionar para a lista
-    header('Location: index.php');
-    exit;
-}
-
-// prepare() + execute() -- NUNCA concatene variáveis no SQL(previne SQL injection)
-$stmt = $pdo->prepare('SELECT * FROM tecnologias WHERE id = :id');
-$stmt->execute(['id' => $id]);
+$nome = htmlspecialchars($_GET['nome']);
+$stmt = $pdo->prepare('SELECT * FROM tecnologias WHERE nome like :nome OR descricao like :descr');
+$stmt->execute(['nome' => "%$nome%", 'descr' => "%$nome%"]); //aparentemente tem q colocar 2 parametros, o pdo n gosta de usar o mesmo para os 2, tambem descobri q os %%
+// tem q ser aq, n funciona no sql(nao sei pq)
 $tec = $stmt->fetch();
-
 if (!$tec) {
     // Registro não encontrado -- redirecionar para a lista
     header('Location: index.php');
