@@ -51,8 +51,12 @@ Projetos
  Contato
 </a>
  <a href="<?php echo $caminho_raiz ?>03_pdo/index.php"
- <?php echo menu_class("Contato", $pagina_atual); ?>>
+ <?php echo menu_class("Catalogo", $pagina_atual); ?>>
  Catálogo
+</a>
+ <a href="<?php echo $caminho_raiz ?>04_sessoes/login.php"
+ <?php echo menu_class("Area Restrita", $pagina_atual); ?>>
+ Área Restrita
 </a>
 </nav>
 <?php

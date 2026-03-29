@@ -1,0 +1,32 @@
+<?php 
+/**
+ * 
+ * Disciplina: Desenvolvimento Web II (2026-DWII)
+ * Aula: 06 -- Autenticação com sessões e controle de acesso
+ * Arquivo: 04_sessoes/auth.php
+ * Autor: Spencer Cenko
+ *
+ * requer_login()
+ * Verifica se há sessão ativa.
+ * Se não houver, redireciona pra o login e encerra.
+ * Chamar no topo de qualquer págian protegida. 
+ */
+ function requer_login(): void
+ {
+    if (session_status() === PHP_SESSION_NONE) {
+        session_start(); //iniciar se ainda não foi iniciada
+    } 
+    if (!isset($_SESSION['usuario'])) {
+        header('Location: login.php');
+        exit;
+    }
+ }
+ /**
+  * usuario_logado()
+  * Retorna o nome do usuário da sessão ou string vazia.
+ */
+function usuario_logado(): string
+{
+    return $_SESSION['usuario'] ?? '';
+}
+?>
