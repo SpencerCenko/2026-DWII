@@ -149,7 +149,9 @@ main {
     margin-top: 2%;
     margin-left: 15%;
 }
-
+#perfil {
+    text-align: center;
+}
 .confirmacao { text-align: center; margin-top: 60px; }
 .confirmacao-icone { font-size: 60px; margin: 0; }
 .confirmacao-titulo { color: #3ba34a; margin: 16px 0 8px; }

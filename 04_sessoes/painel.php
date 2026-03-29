@@ -15,6 +15,10 @@
 */
 require_once __DIR__ . '/includes/auth.php';
 requer_login();
+if (!isset($_SESSION['visitas'])) {
+    $_SESSION['visitas'] = 0;
+}
+$_SESSION['visitas']++;
 
 $titulo = 'Painel - Área Restrita';
 $caminho_raiz = '../';
@@ -35,6 +39,9 @@ $pagino_atual = '';
             <p><strong>Login realizado em:</strong>
             <?php echo htmlspecialchars($_SESSION['logado_em'] ?? '-'); ?>
         </p>
+        <p><strong>Visitas:</strong>
+            <?php echo htmlspecialchars($_SESSION['visitas']); ?>
+        </p>
         </div>
 
         <div class="card">
@@ -45,6 +52,12 @@ $pagino_atual = '';
                 Nas próximas aulas este painel terá funcionalidades reais(CRUD).
             </p>
         </div>
+         <p style="margin-top: 24px; text-align:center;">
+               <a href="perfil.php"
+               style="background: green; color:white; padding:10px 24px;
+            border-radius: 6px; text-decoration: none; font-weight:bold">
+            Informações da conta
+        </a>
         <p style="margin-top: 24px; text-align:center;">
             <a href="logout.php"
             style="background: #cf1c21; color:white; padding:10px 24px;

@@ -57,6 +57,9 @@ Projetos
  <a href="<?php echo $caminho_raiz ?>04_sessoes/login.php"
  <?php echo menu_class("Area Restrita", $pagina_atual); ?>>
  Área Restrita
+  <a href="<?php echo $caminho_raiz ?>04_sessoes/publico.php"
+ <?php echo menu_class("Publico", $pagina_atual); ?>>
+ Público
 </a>
 </nav>
 <?php

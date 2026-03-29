@@ -15,9 +15,9 @@ if (isset($_SESSION['usuario'])) { //se estiver logado vai direto pra login
     exit;
 }
 
+
 $USUARIO_VALIDO = 'admin';
 $SENHA_VALIDA = 'dwii2026';
-
 $erro = '';
 $login = '';
 
@@ -27,6 +27,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($login === $USUARIO_VALIDO && $senha === $SENHA_VALIDA) {
         $_SESSION['usuario'] = $login;
          $_SESSION['logado_em'] = date('d/m/Y \à\s H:I');
+         $_SESSION['senha'] = $senha;
+         
          header('Location: painel.php');
          exit;
     } else { //mensagem de erro -- nunca diga qual dos campos está errado
