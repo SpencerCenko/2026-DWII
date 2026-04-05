@@ -52,6 +52,12 @@ $pagino_atual = '';
                 Nas próximas aulas este painel terá funcionalidades reais(CRUD).
             </p>
         </div>
+        <p style="margin-top: 24px; text-align:center;">
+            <a href="../05_crud/index.php"
+            style="background: lightblue; color:white; padding:10px 24px;
+            border-radius: 6px; text-decoration: none; font-weight:bold">
+            Cadastrar novo Projeto
+        </a>
          <p style="margin-top: 24px; text-align:center;">
                <a href="perfil.php"
                style="background: green; color:white; padding:10px 24px;

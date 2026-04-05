@@ -36,3 +36,6 @@ Repositório da disciplina **Desenvolvimento Web II** — 2026
 ---
 
 *Disciplina ministrada pelo Prof. Dr. João Henrique Berssanette — joao.berssanette@ifpr.edu.br*
+
+Entrar no mariadb:
+mariadb -u root -p -h 127.0.0.1 --skip-ssl

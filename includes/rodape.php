@@ -21,3 +21,4 @@ $autor = isset($nome) ? htmlspecialchars($nome) : "Portfólio";
         | Desenvolvido com PHP
         | IFPR - Ponta Grossa
 </footer>
+<link rel="stylesheet" type="text/css" href="<?php echo $caminho_raiz ?>includes/style.css"/>

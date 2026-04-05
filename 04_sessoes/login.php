@@ -15,7 +15,6 @@ if (isset($_SESSION['usuario'])) { //se estiver logado vai direto pra login
     exit;
 }
 
-
 $USUARIO_VALIDO = 'admin';
 $SENHA_VALIDA = 'dwii2026';
 $erro = '';

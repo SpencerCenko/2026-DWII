@@ -24,6 +24,7 @@ $pagina_atual = '';
         <p>Este conteúdo é visível para qualquer visitante, sem login.
         </p>
         <?php if ($logado): ?>
+            
             <p>Olá, <strong><?php echo htmlspecialchars($_SESSION['usuario']); ?></strong></p>
             <a href="painel.php"
             style="background: #3ba34a; color: white; padding: 10px 24px;
