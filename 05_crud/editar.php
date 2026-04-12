@@ -64,6 +64,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 if ($nome === '' || $descricao === '' || $tecnologias === '') {
     $erro = 'Preencha todos os campos obrigatórios.';
 }
+else if ($ano < 2000 || $ano > (Date('Y'))){
+    $erro = 'Data inválida';
+}
 
 // UPDATE - só executa se não há erro
 if ($erro === '') {
@@ -93,7 +96,7 @@ if ($erro === '') {
     exit;
 }
 else {
-    header('Location: index.php?editado=nok');
+    header('Location: index.php?erro=ano_invalido');
 }
 
 // Se houve erro, atualiza $projeto com o que usuário digitou

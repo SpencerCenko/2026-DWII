@@ -26,7 +26,7 @@ $projetos = $stmt->fetchAll();
 $cadastroOk = isset($_GET['cadastro']) && $_GET['cadastro'] === 'ok';
 $editadoOK = isset($_GET['editado']) && $_GET['editado'] === 'ok';
 $excluidoOk = isset($_GET['excluido']) && $_GET['excluido'] === 'ok';
-$erroMsg = isset($_GET['erro']) && $_GET['erro'] === 'ok';
+$erroMsg = isset($_GET['erro']) ? $_GET['erro'] : '';
 $titulo_pagina = 'Meus Projetos - Portfólio';
 $caminho_raiz = '../';
 $pagina_atual = '';
@@ -69,13 +69,16 @@ $pagina_atual = '';
 </div>
 <?php endif; ?>
 
-<?php if ($erroMsg === "nao_encontado"): ?>
+<?php if ($erroMsg === "nao_encontrado"): ?>
     <div class="alerta-erro">
         <p style="margin: 0;"> Projeto não encontrado. Ele pode já ter sido removido.</p>
 </div>
 <?php elseif ($erroMsg === "id_invalido"): ?>
     <div class="alerta-erro">
         <p style="margin: 0;"> Requisição inválida.</p>
+<?php elseif ($erroMsg === "ano_invalido"): ?>
+    <div class="alerta-erro">
+        <p style="margin: 0;"> Data fora do intervalo esperado</p>
 </div>
 <?php endif; ?>
 
