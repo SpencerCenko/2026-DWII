@@ -49,21 +49,21 @@ $pagino_atual = '';
             <p>Este conteúdo só é vísivel para usuários autenticados.
             </p>
             <p>
-                Nas próximas aulas este painel terá funcionalidades reais(CRUD).
+                <!-- Link para o módulo CRUD implementado na Aula 08.
+                 O caminho sobe um nível (../) para sair de 04_sessoes/
+                 e então entra em 05_crud/. -->
+                 <a href="../05_crud/index.php" class="btn-primario">
+                 Gerenciar projetos
+</a>
             </p>
         </div>
-        <p style="margin-top: 24px; text-align:center;">
-            <a href="../05_crud/index.php"
-            style="background: lightblue; color:white; padding:10px 24px;
-            border-radius: 6px; text-decoration: none; font-weight:bold">
-            Cadastrar novo Projeto
-        </a>
          <p style="margin-top: 24px; text-align:center;">
                <a href="perfil.php"
                style="background: green; color:white; padding:10px 24px;
             border-radius: 6px; text-decoration: none; font-weight:bold">
             Informações da conta
         </a>
+</p>
         <p style="margin-top: 24px; text-align:center;">
             <a href="logout.php"
             style="background: #cf1c21; color:white; padding:10px 24px;
