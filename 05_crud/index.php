@@ -117,10 +117,10 @@ $pagina_atual = '';
                 class="btn-secundario">Ver no GitHub</a>
                 <?php endif; ?>
                 <div style="margin-top: 12px; text-align:center; gap: 8px; flex-wrap: wrap;">
-                    <a href="editar.php?id=<?php echo (int) $projeto['id']; ?>"[
+                    <a href="editar.php?id=<?php echo (int) $projeto['id']; ?>"
                     class="btn-secundario"> Editar</a>
                     <br>
-                    <a href="excluir.php?id=<?php echo (int) $projeto['id']; ?>"[
+                    <a href="excluir.php?id=<?php echo (int) $projeto['id']; ?>"
                     class="btn-perigo"> Excluir</a>
                 </div>
                 <form class="form-container" action="buscar.php" method="post">
