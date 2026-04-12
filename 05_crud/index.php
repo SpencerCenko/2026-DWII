@@ -1,9 +1,10 @@
 <?php 
 /**
  * Disciplina: Desenvolvimento Web II (2026-DWII)
- * Aula: 07 -- CRUD: Create e Read
+ * Aula: 08 -- CRUD COMPLETO: Update e Delete
  * Arquivo: 05_crud/index.php
  * Descrição: Lista todos os projetos cadastrados no banco
+ * e exibe mensagens de feedback após cada operação
  * Autor: Spencer Cenko
  * Data: 30/03/2026
  */
@@ -23,6 +24,9 @@ $projetos = $stmt->fetchAll();
 
 // --- Mensagem de sucesso após cadastro ---
 $cadastroOk = isset($_GET['cadastro']) && $_GET['cadastro'] === 'ok';
+$editadoOK = isset($_GET['editado']) && $_GET['editado'] === 'ok';
+$excluidoOk = isset($_GET['excluido']) && $_GET['excluido'] === 'ok';
+$erroMsg = isset($_GET['erro']) && $_GET['erro'] === 'ok';
 $titulo_pagina = 'Meus Projetos - Portfólio';
 $caminho_raiz = '../';
 $pagina_atual = '';
@@ -52,9 +56,32 @@ $pagina_atual = '';
 </div>
 <?php endif; ?>
 
+<?php if ($editadoOK): ?>
+    <div class="alerta-sucesso">
+        <p style="margin: 0;"> Projeto atualizado com sucesso</p>
+</div>
+
+<?php endif; ?>
+
+<?php if ($excluidoOk): ?>
+    <div class="alerta-sucesso">
+        <p style="margin: 0;"> Projeto removido com sucesso</p>
+</div>
+<?php endif; ?>
+
+<?php if ($erroMsg === "nao_encontado"): ?>
+    <div class="alerta-erro">
+        <p style="margin: 0;"> Projeto não encontrado. Ele pode já ter sido removido.</p>
+</div>
+<?php elseif ($erroMsg === "id_invalido"): ?>
+    <div class="alerta-erro">
+        <p style="margin: 0;"> Requisição inválida.</p>
+</div>
+<?php endif; ?>
+
 <?php if (empty($projetos)): ?>
 <!-- Estado vazio: nenhum projeto ainda -->
- <div class="card" style="text-align: center; padding: 40px 20px; color: $6b7280;">
+ <div class="card" style="text-align: center; padding: 40px 20px; color: #6b7280;">
     <p style="font-size: 40px; margin: 0 0 12px"></p>
     <p style="font-size: 16px; margin: 0 0 16px">Nenhum projeto cadastrado ainda.</p>
     <a href="cadastrar.php" class="btn-primario"> Cadastrar o primeiro projeto</a>
@@ -86,6 +113,13 @@ $pagina_atual = '';
                 rel="noopener noreferrer"
                 class="btn-secundario">Ver no GitHub</a>
                 <?php endif; ?>
+                <div style="margin-top: 12px; text-align:center; gap: 8px; flex-wrap: wrap;">
+                    <a href="editar.php?id=<?php echo (int) $projeto['id']; ?>"[
+                    class="btn-secundario"> Editar</a>
+                    <br>
+                    <a href="excluir.php?id=<?php echo (int) $projeto['id']; ?>"[
+                    class="btn-perigo"> Excluir</a>
+                </div>
                 <form class="form-container" action="buscar.php" method="post">
                 <input type="hidden" name='nome' value="<?php echo htmlspecialchars($projeto['nome']);?>">
                 <button type="submit">Detalhar</button>
