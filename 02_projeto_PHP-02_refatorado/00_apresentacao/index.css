@@ -1,0 +1,42 @@
+body {
+    background-color: bisque;
+}
+img {
+    width: 30%;
+    border-radius: 12px;
+}
+main {
+    background-color: white;
+    margin-left: 13%;
+    border-radius: 12px;
+    width: 70%;
+    margin-top: 1%;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+}
+header {
+    background-color: white;
+    margin-left: 13%;
+    border-radius: 12px;
+    width: 70%;
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+footer {
+    border-radius: 12px;
+    border-color: black;
+    border: 3px solid black;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 2%;
+    height: 2%;
+    width: 150%;
+    border-width: 290%;
+}
+#a {
+    margin-right: 10%;
+}
+
+b {
+    margin-left: 5%;
+}

@@ -18,7 +18,7 @@
  */
 // Valores padrão: evita erro se a página esquecer de declarar
 if (!isset($pagina_atual)) $pagina_atual = "";
-if (!isset($caminho_raiz)) $caminho_raiz = "../";
+if (!isset($caminho_raiz)) $caminho_raiz = "./";
 
 /**
  * menu_class() -- retorna 'class="ativo"' se o item corresponde
@@ -26,11 +26,12 @@ if (!isset($caminho_raiz)) $caminho_raiz = "../";
  * Substitui os quatro operadores ternários repetidos da Aula 03
  * por uma função reutilizável - menos código, mesma lógica.
  */
-function menu_class($item, $atual) {
+function menu_class(string $item, string $atual): string {
     return ($item === $atual) ? 'class="ativo"' : '';
 }
 ?>
 <!-- nav usa a classe CSS definida em style.css -- sem style inline -->
+ $logado = isset($_SESSION['usuario']);
  <nav>
     <!-- Links para o portfólio -- Aula 03 -->
      <a href="<?php echo $caminho_raiz; ?>01_php-intro/index.php"
@@ -62,7 +63,6 @@ Projetos
  Público
 </a>
 </nav>
-<?php
 
-?>
+
 <link rel="stylesheet" type="text/css" href="<?php echo $caminho_raiz ?>includes/style.css"/>
