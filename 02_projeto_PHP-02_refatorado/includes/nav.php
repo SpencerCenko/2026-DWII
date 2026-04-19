@@ -37,9 +37,13 @@ function menu_class(string $item, string $atual): string {
      <a href="<?php echo $caminho_raiz; ?>01_php-intro/index.php"
      <?php echo menu_class("Inicio", $pagina_atual); ?>>
 Inicio
+  <a href="<?php echo $caminho_raiz ?>index.php"
+ <?php echo menu_class("Apresentacao", $pagina_atual); ?>>
+ Apresentação
+</a>
 </a>
 <a href="<?php echo $caminho_raiz; ?>01_php-intro/sobre.php"
-    <?php echo menu_class("Sobre", $pagina_atual); ?>>
+    <?php echo menu_class("sobre", $pagina_atual); ?>>
 Sobre
 </a>
 <a href="<?php echo $caminho_raiz; ?>01_php-intro/projetos.php"

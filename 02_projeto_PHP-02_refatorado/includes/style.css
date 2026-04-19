@@ -157,3 +157,7 @@ main {
 .confirmacao-titulo { color: #3ba34a; margin: 16px 0 8px; }
 .confirmacao-texto { font-size: 16px; color: #374151; margin-bottom: 24px; }
 
+img {
+    border-radius: 5px;
+    width:20%;
+}
