@@ -1,4 +1,4 @@
-<?php $pagina_atual = "inicio"; require_once __DIR__ . '/../includes/cabecalho.php'; ?>
+<?php $pagina_atual = "inicio"; require_once __DIR__ . '/includes/cabecalho.php'; ?>
 <!-- 01_php-intro/index.php -->
  <!--
     Disciplina : Desenvolvimento Web II (DWII)
@@ -9,7 +9,7 @@
 -->
     
     <?php
-    __DIR__ . '/../includes/cabecalho.php';
+    __DIR__ . '/includes/cabecalho.php';
     // Variáveis PHP - serão usadas no HTML abaixo
     $nome = "Spencer Cenko";
     $profissao = "Estudante de Tecnologia";
@@ -37,6 +37,6 @@
     <p>Esta página foi gerada pelo PHP em: <strong><?php echo date("d/m/Y \à\s H:i"); ?></strong></p>
 </div>
 
-<?php require_once __DIR__ . '/../includes/rodape.php'; ?>
+<?php require_once __DIR__ . '/includes/rodape.php'; ?>
 </body>
 </html>

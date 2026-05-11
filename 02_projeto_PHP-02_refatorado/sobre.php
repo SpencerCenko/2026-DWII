@@ -1,6 +1,16 @@
-<?php $pagina_atual = "sobre";
-require_once __DIR__ . '/../includes/cabecalho.php'; ?>
 <?php
+if (session_status() === PHP_SESSION_NONE) {
+  session_start();
+}
+
+$pagina_atual  = 'sobre';
+$caminho_raiz  = './';
+$titulo_pagina = "Portfólio";
+
+
+
+
+
 /**
  * 
  * Arquivo: 01_php-intro/sobre.php
@@ -9,18 +19,15 @@ require_once __DIR__ . '/../includes/cabecalho.php'; ?>
  * Autor: Spencer Cenko
  * 
  */
-$nome = "Spencer Cenko";
-$caminho_raiz = "./";
-$titulo_pagina = "Portfólio - ($nome);";
+
 $formacoes = ['Educação Infantil - Completa', 'Ensino Fundamental 1 - Completo', 'Ensino Fundamental 2 - Completo',
  'Ensino médio integrado ao ensino Técnico em informática - Cursando'];
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php echo $pagina_atual?> - <?php echo $nome; ?></title>
+
+    <?php include __DIR__ . '/includes/cabecalho.php';?>
 </head>
 <body>
     <div>
@@ -38,7 +45,7 @@ $formacoes = ['Educação Infantil - Completa', 'Ensino Fundamental 1 - Completo
      }
      ?>
 </div>
-<?php require_once __DIR__ . '/../includes/rodape.php'; ?>
+<?php require_once __DIR__ . '/includes/rodape.php'; ?>
 
 </body>
 </html>

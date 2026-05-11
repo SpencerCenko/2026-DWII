@@ -1,5 +1,12 @@
-<?php include '../includes/cabecalho.php'; ?>
 <?php
+if (session_status() === PHP_SESSION_NONE) {
+  session_start();
+}
+
+$pagina_atual  = 'contato';
+$caminho_raiz  = './';
+$titulo_pagina = "Contato";
+
 
 /** 
 * ARQUIVO: contato.php (raiz do repositório 2026-DWII)
@@ -16,10 +23,11 @@
 // VARIÁVEIS DO TEMPLATE
 // Definidas ANTES do include -- cabecalho.php as usa para
 // montar o <title>, o <link> do CSS e o item ativo do menu.
-$nome = "Spencer Cenko";
-$pagina_atual = "contato";
-$caminho_raiz = "../";
-$titulo_pagina = "Contato";
+
+
+
+
+
 $nome_visitante = $_POST['nome_visitante'] ?? '';
 $mensagem = $_POST['mensagem'] ?? '';
 
@@ -46,7 +54,15 @@ if (empty($erros) && $_SERVER['REQUEST_METHOD'] === 'POST') {
     exit;
 }
 }
-?>
+?><!DOCTYPE html>
+
+<html lang="pt-BR">
+<head>
+<?php include __DIR__ . '/includes/cabecalho.php'; ?>
+
+
+</head>
+<body>
 
 
 <div class="container">
@@ -71,4 +87,7 @@ if (empty($erros) && $_SERVER['REQUEST_METHOD'] === 'POST') {
             </div>
             <?php endif; ?>
 </div>
-<?php include '../includes/rodape.php'; ?>
+
+<?php include __DIR__ . '/includes/rodape.php'; ?>
+</body>
+</html>

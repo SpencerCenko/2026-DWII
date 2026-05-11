@@ -1,4 +1,4 @@
-<?php include '../includes/cabecalho.php'; ?>
+<?php include __DIR__ . '/includes/cabecalho.php'; ?>
 <?php
 /**
 * ARQUIVO: 02_formularios/obrigado.php
@@ -30,6 +30,6 @@ $nome_visitante = htmlspecialchars($_GET['nome'] ?? 'visitante');
 <p class="confirmacao-texto">
     Sua mensagem foi recebida. Entrarei em contato em breve.
 </p>
-<a href-"contato.php" class="btn"> <- Enviar outra mensagem</a>
+<a href="contato.php" class="btn"> <- Enviar outra mensagem</a>
 </div>
-<?php include '../include/rodape.php'; ?>
+<?php include __DIR__ . '/includes/rodape.php'; ?>

@@ -1,8 +1,5 @@
 <?php
-   if (session_status() === PHP_SESSION_NONE) {
-    session_start();
-}
-
+$nome = "Spencer Cenko";
 /**
  * 
  * Arquivo: includes/cabecalho.php
@@ -38,7 +35,7 @@ if (!isset($pagina_atual)) $pagina_atual = '';
    02_formularios/contato.php -> igual: '../includes/style.css'
    Assim um único arquivo CSS serve a todas as pastas.
 -->
-   <link rel="stylesheet" type="text/css" href="<?php echo $caminho_raiz ?>includes/style.css"/>
+   <link rel="stylesheet" type="text/css" href="includes/style.css"/>
    <?php
    // __DIR__ é uma constante PHP que retorna o caminho absoluto
    // do diretório onde este arquivo está -- garante que o include

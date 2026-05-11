@@ -1,5 +1,8 @@
 <?php
-include __DIR__ . '/includes/cabecalho.php';
+if (session_status() === PHP_SESSION_NONE) {
+  session_start();
+}
+
 $pagina_atual  = 'inicio';
 $caminho_raiz  = './';
 $titulo_pagina = 'Portfólio — Spencer Cenko';
@@ -19,7 +22,7 @@ $email     = '20241ctb0100028@escola.ifpr.edu.br';
 <html lang="pt-BR">
 <head>
 
-
+<?php include __DIR__ . '/includes/cabecalho.php';?>
 
 </head>
 <body>
@@ -30,7 +33,7 @@ $email     = '20241ctb0100028@escola.ifpr.edu.br';
   <!-- Foto de perfil -->
   <div class="foto-container">
     <img
-      src="<?php echo $caminho_raiz; ?>00_apresentacao/imgs/foto.jpg"
+      src="includes/imgs/foto.jpg"
       alt="Foto de <?php echo htmlspecialchars($nome); ?>"
       class="foto-perfil">
   </div>

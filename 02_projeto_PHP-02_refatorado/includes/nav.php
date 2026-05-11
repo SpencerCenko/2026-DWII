@@ -16,6 +16,7 @@
  * $caminho_raiz -- string: caminho relativo até a raiz
  */
 // Valores padrão: evita erro se a página esquecer de declarar
+$caminho_projeto = "02_projeto_PHP-02_refatorado/";
 if (!isset($pagina_atual)) $pagina_atual = "";
 if (!isset($caminho_raiz)) $caminho_raiz = "./";
 
@@ -28,13 +29,13 @@ if (!isset($caminho_raiz)) $caminho_raiz = "./";
 function menu_class(string $item, string $atual): string {
     return ($item === $atual) ? 'class="ativo"' : '';
 }
- $logado = isset($_SESSION['usuario']);
+$logado = isset($_SESSION['usuario']);
 ?>
 <!-- nav usa a classe CSS definida em style.css -- sem style inline -->
 
  <nav>
     <!-- Links para o portfólio -- Aula 03 -->
-     <a href="<?php echo $caminho_raiz; ?>01_php-intro/index.php"
+     <a href="<?php echo $caminho_raiz; ?>index2.php"
      <?php echo menu_class("Inicio", $pagina_atual); ?>>
 Inicio
   <a href="<?php echo $caminho_raiz ?>index.php"
@@ -42,20 +43,20 @@ Inicio
  Apresentação
 </a>
 </a>
-<a href="<?php echo $caminho_raiz; ?>01_php-intro/sobre.php"
+<a href="<?php echo $caminho_raiz; ?>sobre.php"
     <?php echo menu_class("sobre", $pagina_atual); ?>>
 Sobre
 </a>
-<a href="<?php echo $caminho_raiz; ?>01_php-intro/projetos.php"
+<a href="<?php echo $caminho_raiz; ?>projetos.php"
     <?php echo menu_class("Projetos", $pagina_atual); ?>>
 Projetos
 </a>
 <!-- Link para o formulário -- Aula 04 -->
- <a href="<?php echo $caminho_raiz ?>02_formularios/contato.php"
+ <a href="<?php echo $caminho_raiz ?>contato.php"
  <?php echo menu_class("Contato", $pagina_atual); ?>>
  Contato
 </a>
- <a href="<?php echo $caminho_raiz ?>03_pdo/index.php"
+ <a href="<?php echo $caminho_raiz ?>catalogo.php"
  <?php echo menu_class("Catalogo", $pagina_atual); ?>>
  Catálogo
 </a>
