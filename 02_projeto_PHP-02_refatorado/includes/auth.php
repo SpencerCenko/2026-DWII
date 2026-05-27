@@ -16,7 +16,7 @@ function usuario_atual():  ?string
 function requer_login(): void
 {
         if (!usuario_logado()) {
-            header('Locaation: login.php');
+            header('Location: login.php');
             exit;
         }
 }

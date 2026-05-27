@@ -14,8 +14,7 @@ require_once __DIR__ . '/includes/cabecalho.php';
     <p>
         Olá <strong><?= htmlspecialchars(usuario_atual()) ?></strong>!
         Você está em uma área restrita.</p>
-    <p>Em breve, esta página listará seus projetos para edição
-        (a ser implementado na <strong>Aula 13 - Refatoração Parte V</strong>).
+    <p>   <a href="<?php echo $caminho_raiz; ?>admin.php" class="btn-primario">Gerenciar projetos</a>
     </p>
     <p><a href="logout.php">Sair</a></p>
 </main>

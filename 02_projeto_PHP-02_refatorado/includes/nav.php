@@ -72,6 +72,10 @@ Projetos
     <a href="<?php echo $caminho_raiz; ?>04_sessoes/logout.php">
       Sair
     </a>
+        <a href="<?php echo $caminho_raiz; ?>admin.php"
+       <?php echo menu_class('admin', $pagina_atual); ?>>
+      Painel admin
+    </a>
 
   <?php else: ?>
     <a href="<?php echo $caminho_raiz; ?>04_sessoes/login.php"

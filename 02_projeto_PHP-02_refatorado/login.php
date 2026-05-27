@@ -10,7 +10,7 @@ if (usuario_logado()) {
 $erro = '';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $login = trim($POST['login'] ?? '');
+    $login = trim($_POST['login'] ?? '');
     $senha = $_POST['senha'] ?? '';
 
     if ($login === '' || $senha === '' ) {
@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     
 
     $stmt = $pdo->prepare(
-        "SELECT id, login. senha FROM usuarios WHERE login = :login AND status = 'ativo'"
+        "SELECT id, login, senha FROM usuarios WHERE login = :login AND status = 'ativo'"
     );
     $stmt->execute([':login' => $login]);
     $usuario = $stmt->fetch();
@@ -30,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $_SESSION['usuario'] = $usuario['login'];
 
         $log = $pdo->prepare(
-            "INSERT INTO logs (tabela_afetada, registro_id, acao, usuario_login, detalhes) VALUES ('usuario', :id. 'LOGIN', :login, 'Login bem-sucedido')"
+            "INSERT INTO logs (tabela_afetada, registro_id, acao, usuario_login, detalhes) VALUES ('usuario', :id, 'LOGIN', :login, 'Login bem-sucedido')"
         );
         $log->execute([
             ':id' => $usuario['id'],
@@ -41,7 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit;
     }
     $log = $pdo->prepare(
-        "INSERT INTO logs(tabela_afetada, registro_id, acao, usuario_login, detalhes) VALUES ('usuarios', 0, 'LOGIN_FAIL'. :login, 'Credenciais inválidas')"
+        "INSERT INTO logs(tabela_afetada, registro_id, acao, usuario_login, detalhes) VALUES ('usuarios', 0, 'LOGIN_FAIL', :login, 'Credenciais inválidas')"
     );
     $log->execute([':login' => $login]);
     
