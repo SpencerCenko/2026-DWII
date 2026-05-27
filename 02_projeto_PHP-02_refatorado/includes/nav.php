@@ -60,7 +60,7 @@ Projetos
  <?php echo menu_class("Catalogo", $pagina_atual); ?>>
  Catálogo
 </a>
-  <a href="<?php echo $caminho_raiz ?>04_sessoes/publico.php"
+  <a href="<?php echo $caminho_raiz ?>publico.php"
  <?php echo menu_class("Publico", $pagina_atual); ?>>
  Público
 </a>
